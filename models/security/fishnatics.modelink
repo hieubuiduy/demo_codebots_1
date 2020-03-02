@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelink threeWay="true" forceExeedL="true" forceExeedM="true" forceExeedR="true">
+  <model path="/ksatria.fishnatics.models/ui/fishnatics.angularbotui" position="LEFT" />
+  <model path="/ksatria.fishnatics.models/entity/fishnatics.springbotentity" position="MIDDLE" />
+  <model path="/ksatria.fishnatics.models/security/fishnatics.commonsecurity" position="RIGHT" />
+</modelink>
