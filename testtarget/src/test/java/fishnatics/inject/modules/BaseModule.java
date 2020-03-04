@@ -213,6 +213,14 @@ public class BaseModule extends AbstractModule {
 					chromeOptions.setAcceptInsecureCerts(true);
 					chromeOptions.addArguments("--start-maximized");
 				}
+
+				// % protected region % [Change chrome options here] off begin
+				// Fix problem in jenkins instance for docker
+				// The problem is caused by the limited size of docker memory.
+				// See more details in https://developers.google.com/web/tools/puppeteer/troubleshooting
+				chromeOptions.addArguments("--disable-dev-shm-usage");
+				// % protected region % [Change chrome options here] end
+
 				// % protected region % [Add any additional logic for chrome driver here] off begin
 				// % protected region % [Add any additional logic for chrome driver here] end
 				webDriver = new ChromeDriver((ChromeOptions) options);

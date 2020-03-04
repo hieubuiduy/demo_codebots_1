@@ -22,4 +22,5 @@ Feature: Read Fish as admin user
 		When I login with admin account
 		And I should see the homepage
 		And I navigate to the "Fish" backend page
+		And I create an "Fish" if not exists
 		And I "view" an existing "Fish"

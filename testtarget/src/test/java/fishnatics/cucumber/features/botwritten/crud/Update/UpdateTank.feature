@@ -22,6 +22,6 @@ Feature: Update Tank as admin user
 		When I login with admin account
 		And I should see the homepage
 		And I navigate to the "Tank" backend page
-		And I create a valid "Tank"
+		And I create an "Tank" if not exists
 		And I 'update' an existing 'Tank'
 		Then I am on the "Tank" backend page

@@ -19,7 +19,7 @@ package fishnatics.cucumber.pom.botwritten.page.crud;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import fishnatics.cucumber.pom.botwritten.page.CrudPage;
-import fishnatics.cucumber.utils.TypingUtils;
+import fishnatics.cucumber.utils.*;
 import fishnatics.entities.AbstractEntity;
 import cucumber.runtime.java.guice.ScenarioScoped;
 import lombok.extern.slf4j.Slf4j;

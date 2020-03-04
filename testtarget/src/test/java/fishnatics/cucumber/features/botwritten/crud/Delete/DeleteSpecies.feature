@@ -22,4 +22,5 @@ Feature: Delete Species as admin user
 		When I login with admin account
 		And I should see the homepage
 		And I navigate to the "Species" backend page
+		And I create an "Species" if not exists
 		And I 'delete' an existing 'Species'

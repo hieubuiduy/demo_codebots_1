@@ -69,8 +69,16 @@ public class DropdownUtils {
 	 */
 	private static WebElement findOptionByName(@NonNull WebDriver driver, @NonNull WebElement element, @NonNull String name) {
 		ScrollingUtils.scrollToElement(driver, element);
+
+		// Element of ng select
+		WebElement selectElement = element;
+		// Find ng select if passed in a wrapper component
+		if (!element.getTagName().equals("ng-select")) {
+			selectElement = element.findElement(By.tagName("ng-select"));
+		}
+
 		// Click the dropdown if not expanded
-		if (!element.findElement(By.tagName("ng-select")).getAttribute("class").contains(DROPDOWN_OPEN_CLASS)) {
+		if (!selectElement.getAttribute("class").contains(DROPDOWN_OPEN_CLASS)) {
 			element.click();
 		}
 

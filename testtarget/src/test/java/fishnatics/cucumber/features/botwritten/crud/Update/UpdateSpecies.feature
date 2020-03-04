@@ -22,6 +22,6 @@ Feature: Update Species as admin user
 		When I login with admin account
 		And I should see the homepage
 		And I navigate to the "Species" backend page
-		And I create a valid "Species"
+		And I create an "Species" if not exists
 		And I 'update' an existing 'Species'
 		Then I am on the "Species" backend page

@@ -27,6 +27,7 @@ import fishnatics.cucumber.pom.botwritten.factories.AdminPageFactory;
 import cucumber.runtime.java.guice.ScenarioScoped;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.TimeoutException;
 import lombok.extern.slf4j.Slf4j;
 
 // % protected region % [Add any additional imports here] off begin
@@ -92,8 +93,32 @@ public class CrudStepDef extends AbstractStepDef {
 		}
 	}
 
+	@Given("I create an {string} if not exists")
+	public void create_entity_if_not_exist(String entityName) throws Exception {
+		var page = adminPageFactory.createCrudPage(entityName);
+
+		try {
+			// wait for the list to be populated with values
+			webDriverWait.until(x -> page.CrudListItems.size() > 0);
+		} catch (TimeoutException e) {
+			// Create a new entity if no one exists
+			page.createButton.click();
+			createValidEntity(entityName);
+		}
+	}
+
 	@Given("I create a valid {string}")
-	public AbstractEntity crud_backend_fill_in_and_save(String entityName) throws Exception {
+	public void crud_backend_fill_in_and_save(String entityName) throws Exception {
+		createValidEntity(entityName);
+	}
+
+	/**
+	 * Given the name of entity, recursively create entities in backend
+	 * @param entityName Name of the type of entity
+	 * @return Created entity
+	 * @throws Exception
+	 */
+	private AbstractEntity createValidEntity(String entityName) throws Exception{
 		AbstractEntity entity = getEntityFactory(entityName).createWithNoRef();
 
 		var createPage = adminPageFactory.createCrudPage(entityName).getCreatePage();
