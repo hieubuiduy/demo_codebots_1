@@ -19,7 +19,7 @@ package fishnatics.cucumber.pom.botwritten.page.crud;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import fishnatics.cucumber.pom.botwritten.page.CrudPage;
-import fishnatics.cucumber.utils.TypingUtils;
+import fishnatics.cucumber.utils.*;
 import fishnatics.entities.AbstractEntity;
 import cucumber.runtime.java.guice.ScenarioScoped;
 import lombok.extern.slf4j.Slf4j;
@@ -111,8 +111,7 @@ public class AdminUsersFishnaticPage extends CrudPage {
 		lastNameField.sendKeys(entity.getLastName());
 		usernameField.sendKeys(entity.getUsername());
 		passwordField.sendKeys(entity.getPassword());
-		genderField.click();
-		genderField.findElement(By.xpath(".//span[text()='" + entity.getGender().getLiteralValue() + "']")).click();
+		DropdownUtils.selectOptionByName(webDriver, genderField, entity.getGender().getLiteralValue());
 		emailField.sendKeys(entity.getEmail());
 		if (entity.getIsArchived()) {
 			isArchivedField.click();

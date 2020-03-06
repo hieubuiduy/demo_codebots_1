@@ -62,7 +62,7 @@ dependencies {
 	testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.141.59'
 
 	// WebDriverManager - manages web driver binaries
-	testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.7.1'
+	testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.8.1'
 
 	// MockNeat - Mocking field values
 	testImplementation 'net.andreinc.mockneat:mockneat:0.3.6'
