@@ -23,7 +23,7 @@ import {WelcomeWrappingViewViewComponent} from '../../../views/welcomeWrappingVi
 
 // % protected region % [Add any additional imports here] on begin
 import {RouterModule} from '@angular/router';
-import { StatsTileModule } from '../statsWrappingTile/stats_wrapping_tile.tile.module';
+import { StatsWrappingTileTileModule } from '../statsWrappingTile/stats_wrapping_tile.tile.module';
 // % protected region % [Add any additional imports here] end
 
 @NgModule({
@@ -38,7 +38,7 @@ import { StatsTileModule } from '../statsWrappingTile/stats_wrapping_tile.tile.m
 		CommonComponentModule,
 		// % protected region % [Add any additional module imports here] off begin
 		RouterModule,
-		StatsTileModule,
+		StatsWrappingTileTileModule,
 		// % protected region % [Add any additional module imports here] end
 	],
 	exports: [

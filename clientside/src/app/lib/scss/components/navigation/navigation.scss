@@ -440,9 +440,9 @@ Styling for basic navigation, vertical navigation and horizontal navigation.
 				color: $white;
 			}
 
-			@import "_sublinks-navigation.scss";
+			@import "sublinks-navigation.scss";
 		}
 	}
 }
-	@import "_expanded-navigation.scss";
+	@import "expanded-navigation.scss";
 // % protected region % [Add additional navigation styles here] end

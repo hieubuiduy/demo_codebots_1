@@ -128,7 +128,7 @@ export class StatsWrappingTileTileComponent {
 
 
 
-    	@ViewChild('canvas')
+    	@ViewChild('canvas', {static: false})
     	canvasEl: ElementRef;
 
     	chart: Chart;
