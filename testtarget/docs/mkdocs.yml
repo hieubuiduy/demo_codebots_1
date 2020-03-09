@@ -29,8 +29,8 @@ pages:
     - Site Settings: 'admin/site-admin/site-settings.md'
     - Emails: 'admin/site-admin/emails.md'
   - Entities:
-    - Fish Entity: 'admin/entities/fish.md'
     - Tank Entity: 'admin/entities/tank.md'
+    - Fish Entity: 'admin/entities/fish.md'
     - Species Entity: 'admin/entities/species.md'
     - Role Entity: 'admin/entities/role.md'
     - Privilege Entity: 'admin/entities/privilege.md'

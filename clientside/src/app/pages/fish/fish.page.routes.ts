@@ -27,15 +27,6 @@ import {FishWrappingTileTileComponent} from '../../tiles/custom/fishWrappingTile
  */
 export const appRoutes: Routes = [
 	{
-		path: '',
-		// % protected region % [Configure component or redirect homepage tile here] off begin
-		redirectTo: 'fish',
-		// % protected region % [Configure component or redirect homepage tile here] end
-		pathMatch: 'full',
-		// % protected region % [Add any additional route configuration for homepage tile here] off begin
-		// % protected region % [Add any additional route configuration for homepage tile here] end
-	},
-	{
 		path: 'fish',
 		children: [
 			{

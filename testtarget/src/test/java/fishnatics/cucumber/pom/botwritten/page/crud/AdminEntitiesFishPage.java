@@ -57,6 +57,8 @@ public class AdminEntitiesFishPage extends CrudPage {
 	private WebElement dateOfBirthField;
 	@FindBy(how = How.XPATH, using = "//input[@id='alive-field']")
 	private WebElement aliveField;
+	@FindBy(how = How.XPATH, using = "//ng-select[@id='born-field']")
+	private WebElement bornField;
 
 	// Outgoing one-to-one
 
@@ -111,6 +113,7 @@ public class AdminEntitiesFishPage extends CrudPage {
 		if (entity.getAlive()) {
 			aliveField.click();
 		}
+		DropdownUtils.selectOptionByName(webDriver, bornField, entity.getBorn().getLiteralValue());
 
 		saveButton.click();
 	}

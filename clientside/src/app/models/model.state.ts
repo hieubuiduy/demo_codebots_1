@@ -19,16 +19,21 @@ import {Params, RouterStateSnapshot} from '@angular/router';
 import {RouterReducerState, RouterStateSerializer} from '@ngrx/router-store';
 import {RoutingEffect} from '../lib/routing/routing.effect';
 import {QueryParams} from '../lib/services/http/interfaces';
-import {FishEffect} from './fish/fish.model.effect';
-import {
-	FishModelState,
-	initialState as FishModelInitialState
-} from './fish/fish.model.state';
 import {TankEffect} from './tank/tank.model.effect';
 import {
 	TankModelState,
 	initialState as TankModelInitialState
 } from './tank/tank.model.state';
+import {FishEffect} from './fish/fish.model.effect';
+import {
+	FishModelState,
+	initialState as FishModelInitialState
+} from './fish/fish.model.state';
+import {FishnaticEffect} from './fishnatic/fishnatic.model.effect';
+import {
+	FishnaticModelState,
+	initialState as FishnaticModelInitialState
+} from './fishnatic/fishnatic.model.state';
 import {SpeciesEffect} from './species/species.model.effect';
 import {
 	SpeciesModelState,
@@ -39,11 +44,6 @@ import {
 	AdminModelState,
 	initialState as AdminModelInitialState
 } from './admin/admin.model.state';
-import {FishnaticEffect} from './fishnatic/fishnatic.model.effect';
-import {
-	FishnaticModelState,
-	initialState as FishnaticModelInitialState
-} from './fishnatic/fishnatic.model.state';
 import {RoleEffect} from './role/role.model.effect';
 import {
 	RoleModelState,
@@ -108,11 +108,11 @@ export interface AbstractModelAudit<E extends AbstractModel> {
  * application.
  */
 export interface ModelState {
-	FishModel: FishModelState;
 	TankModel: TankModelState;
+	FishModel: FishModelState;
+	FishnaticModel: FishnaticModelState;
 	SpeciesModel: SpeciesModelState;
 	AdminModel: AdminModelState;
-	FishnaticModel: FishnaticModelState;
 	RoleModel: RoleModelState;
 	PrivilegeModel: PrivilegeModelState;
 }
@@ -121,15 +121,20 @@ export interface ModelState {
  * Initial model state of the application.
  */
 export const initialModelState: ModelState = {
+	TankModel: {
+		...TankModelInitialState,
+		// % protected region % [Add any additional state for model Tank here] off begin
+		// % protected region % [Add any additional state for model Tank here] end
+	},
 	FishModel: {
 		...FishModelInitialState,
 		// % protected region % [Add any additional state for model Fish here] off begin
 		// % protected region % [Add any additional state for model Fish here] end
 	},
-	TankModel: {
-		...TankModelInitialState,
-		// % protected region % [Add any additional state for model Tank here] off begin
-		// % protected region % [Add any additional state for model Tank here] end
+	FishnaticModel: {
+		...FishnaticModelInitialState,
+		// % protected region % [Add any additional state for model Fishnatic here] off begin
+		// % protected region % [Add any additional state for model Fishnatic here] end
 	},
 	SpeciesModel: {
 		...SpeciesModelInitialState,
@@ -140,11 +145,6 @@ export const initialModelState: ModelState = {
 		...AdminModelInitialState,
 		// % protected region % [Add any additional state for model Admin here] off begin
 		// % protected region % [Add any additional state for model Admin here] end
-	},
-	FishnaticModel: {
-		...FishnaticModelInitialState,
-		// % protected region % [Add any additional state for model Fishnatic here] off begin
-		// % protected region % [Add any additional state for model Fishnatic here] end
 	},
 	RoleModel: {
 		...RoleModelInitialState,
@@ -174,11 +174,11 @@ export interface AppState {
  */
 export const effects = [
 	RoutingEffect,
-	FishEffect,
 	TankEffect,
+	FishEffect,
+	FishnaticEffect,
 	SpeciesEffect,
 	AdminEffect,
-	FishnaticEffect,
 	RoleEffect,
 	PrivilegeEffect,
 	// % protected region % [Add any additional effects here] off begin

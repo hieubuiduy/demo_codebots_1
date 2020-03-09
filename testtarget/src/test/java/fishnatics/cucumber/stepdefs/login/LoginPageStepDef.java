@@ -48,7 +48,7 @@ public class LoginPageStepDef extends AbstractStepDef {
 
 	@Then("I should see the homepage")
 	public void iShouldSeeTheHomepage() {
-			webDriverWait.until(webDriver -> webDriver.getCurrentUrl().equals(properties.getProperty("selenium.url") + "/fish/fish-wrapping-tile"));
+			webDriverWait.until(webDriver -> webDriver.getCurrentUrl().equals(properties.getProperty("selenium.url") + "/welcome/welcome-wrapping-tile"));
 	}
 
 	@When("I login with admin account")

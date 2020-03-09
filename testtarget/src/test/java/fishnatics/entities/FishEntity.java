@@ -16,6 +16,7 @@
  */
 package fishnatics.entities;
 
+import fishnatics.entities.enums.*;
 import lombok.*;
 
 import java.time.*;
@@ -75,6 +76,11 @@ public class FishEntity extends AbstractEntity {
 	@ToString.Include
 	// % protected region % [Modify attribute annotation for Alive here] end
 	private Boolean alive;
+
+	// % protected region % [Modify attribute annotation for Born here] off begin
+	@ToString.Include
+	// % protected region % [Modify attribute annotation for Born here] end
+	private BornEnum born;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//

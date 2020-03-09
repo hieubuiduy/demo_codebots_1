@@ -18,6 +18,10 @@
     <Acl Uuid="24b50756-22f8-4c3f-8981-3e46463fdb25" Group="664294bd-80fe-4ab5-a953-c07fe4c6286a" SecurityScheme="1ef3760c-6edb-4bd6-915f-53c0e532bb45" Read="true"/>
     <Acl Uuid="da58fbd5-d096-45bb-9ee0-33ccbeec3392" Group="664294bd-80fe-4ab5-a953-c07fe4c6286a" SecurityScheme="d20b00a0-c539-4fd4-a988-5e7b337f3007" Read="true"/>
     <Acl Uuid="2ec438cc-26de-4c78-964b-0dd23eb7ba39" Group="664294bd-80fe-4ab5-a953-c07fe4c6286a" SecurityScheme="a11e6337-3941-4f3d-8d13-2ae7abe6e2b5" Read="true"/>
+    <Acl Uuid="f2eb42c7-f25b-4d8e-8ba7-4b628f29426b" Group="60f03961-27bf-45af-96c9-328423de7ad7" SecurityScheme="733ee3af-dd77-4682-b2fe-5305ef3b818e" Read="true"/>
+    <Acl Uuid="4c1e3379-7fc8-48e2-93f6-552b82310692" Group="60f03961-27bf-45af-96c9-328423de7ad7" SecurityScheme="f4ac0495-0df4-45b9-b89f-82cf5655af42" Read="true"/>
+    <Acl Uuid="a010cbd9-55bc-42ea-a816-3e03f738c3ec" Group="664294bd-80fe-4ab5-a953-c07fe4c6286a" SecurityScheme="733ee3af-dd77-4682-b2fe-5305ef3b818e" Read="true"/>
+    <Acl Uuid="bfb0aeeb-ef74-46ff-b228-4bf44e66035a" Group="664294bd-80fe-4ab5-a953-c07fe4c6286a" SecurityScheme="f4ac0495-0df4-45b9-b89f-82cf5655af42" Read="true"/>
   </Authorization>
   <Auditing/>
   <SecuritySchemes>
@@ -44,6 +48,12 @@
     </SecuritySchemes>
     <SecuritySchemes Uuid="1ef3760c-6edb-4bd6-915f-53c0e532bb45" Name="Fish">
       <Object href="../ui/fishnatics.angularbotui#1ef3760c-6edb-4bd6-915f-53c0e532bb45"/>
+    </SecuritySchemes>
+    <SecuritySchemes Uuid="733ee3af-dd77-4682-b2fe-5305ef3b818e" Name="Unnnamed Page Page">
+      <Object href="../ui/fishnatics.angularbotui#733ee3af-dd77-4682-b2fe-5305ef3b818e"/>
+    </SecuritySchemes>
+    <SecuritySchemes Uuid="f4ac0495-0df4-45b9-b89f-82cf5655af42" Name="Unnnamed Page Page">
+      <Object href="../ui/fishnatics.angularbotui#f4ac0495-0df4-45b9-b89f-82cf5655af42"/>
     </SecuritySchemes>
   </SecuritySchemes>
   <TwoFactorAuthenticationProviders/>

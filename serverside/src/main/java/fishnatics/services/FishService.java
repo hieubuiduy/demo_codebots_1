@@ -40,6 +40,7 @@ import javax.validation.Validator;
 import com.google.common.collect.Sets;
 import com.querydsl.core.types.ExpressionUtils;
 import com.querydsl.core.types.Predicate;
+import fishnatics.entities.enums.*;
 import java.time.*;
 import fishnatics.entities.SpeciesEntity;
 import fishnatics.repositories.SpeciesRepository;
@@ -194,6 +195,26 @@ public class FishService extends AbstractService<FishEntity, FishRepository, Fis
 
 		// % protected region % [Add any additional logic for findByAlive before returning the entities here] off begin
 		// % protected region % [Add any additional logic for findByAlive before returning the entities here] end
+
+		return entities;
+	}
+
+	/**
+	 * Return an entity or a list of entities that have the given attribute Born.
+	 *
+	 * @param born the attribute against which the entities will be retrieved
+	 * @return a list of entities that have the given attribute Born
+	 */
+	@PreAuthorize("hasPermission('FishEntity', 'read')")
+	@Transactional(readOnly = true)
+	public List<FishEntity> findByBorn(BornEnum born) {
+		// % protected region % [Add any additional logic for findByBorn before the main body here] off begin
+		// % protected region % [Add any additional logic for findByBorn before the main body here] end
+
+		List<FishEntity> entities = Lists.newArrayList(repository.findByBorn(born));
+
+		// % protected region % [Add any additional logic for findByBorn before returning the entities here] off begin
+		// % protected region % [Add any additional logic for findByBorn before returning the entities here] end
 
 		return entities;
 	}

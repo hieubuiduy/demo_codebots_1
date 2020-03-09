@@ -16,6 +16,7 @@
  */
 import {FormGroup, Validators} from '@angular/forms';
 import {Group, AbstractModel, ModelProperty, ModelPropertyType, ModelRelation, ModelRelationType} from '../../lib/models/abstract.model';
+import {BornEnum, bornEnumArray} from '../../enums/born.enum';
 import {SpeciesModel} from '../species/species.model';
 import {TankModel} from '../tank/tank.model';
 import * as _ from 'lodash';
@@ -76,6 +77,11 @@ export class FishModel extends AbstractModel {
 	 * {docoDescription=TODO: Get doco description, springFoxDataTypeProperty=, position=4, example=true}.
 	 */
 	alive: boolean = false;
+
+	/**
+	 * {docoDescription=TODO: Get doco description, springFoxDataTypeProperty=, position=5, example=Sally}.
+	 */
+	born: BornEnum;
 
 	tankId: string;
 
@@ -165,6 +171,30 @@ export class FishModel extends AbstractModel {
 				],
 				// % protected region % [Add any additional model attribute properties for Alive here] off begin
 				// % protected region % [Add any additional model attribute properties for Alive here] end
+			},
+			{
+				name: 'born',
+				// % protected region % [Set displayName for Born here] off begin
+				displayName: 'Born',
+				// % protected region % [Set displayName for Born here] end
+				type: ModelPropertyType.ENUM,
+				enumLiterals: bornEnumArray,
+				// TODO maybe consider to change to the enum
+				// % protected region % [Set display element type for Born here] off begin
+				elementType: ElementType.ENUM,
+				// % protected region % [Set display element type for Born here] end
+				// % protected region % [Set isSensitive for Born here] off begin
+				isSensitive: false,
+				// % protected region % [Set isSensitive for Born here] end
+				// % protected region % [Set readonly for Born here] off begin
+				readOnly: false,
+				// % protected region % [Set readonly for Born here] end
+				validators: [
+					// % protected region % [Add other validators for Born here] off begin
+					// % protected region % [Add other validators for Born here] end
+				],
+				// % protected region % [Add any additional model attribute properties for Born here] off begin
+				// % protected region % [Add any additional model attribute properties for Born here] end
 			},
 			// % protected region % [Add any additional class field names here] off begin
 			// % protected region % [Add any additional class field names here] end
@@ -298,6 +328,8 @@ export class FishModel extends AbstractModel {
 				this.dateOfBirth = json.dateOfBirth;
 			}
 			this.alive = json.alive;
+			this.born = json.born;
+			this.born = json.born;
 			this.tankId = json.tankId;
 			this.speciesId = json.speciesId;
 			// % protected region % [Add any additional logic here after set the data] off begin
@@ -314,6 +346,7 @@ export class FishModel extends AbstractModel {
 			name: this.name,
 			dateOfBirth: this.dateOfBirth,
 			alive: this.alive,
+			born: this.born,
 			tankId: this.tankId,
 			speciesId: this.speciesId,
 			// % protected region % [Add any additional logic here to json] off begin
