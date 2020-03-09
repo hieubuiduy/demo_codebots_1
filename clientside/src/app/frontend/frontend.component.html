@@ -29,7 +29,10 @@ Any changes out side of "protected regions" will be lost next time the bot makes
 <!-- % protected region % [Modify or delete default nav bar here] end -->
 
 <div class="body-content">
-	<!-- % protected region % [Add any additional HTML structure here] off begin -->
+	<!-- % protected region % [Add any additional HTML structure here] on begin -->
+	<header *ngIf='isLoggedIn()'>
+		<img src="../../assets/img/fishnatic.png" alt="Fishnatics Logo">
+	</header>
 	<!-- % protected region % [Add any additional HTML structure here] end -->
 
 	<router-outlet></router-outlet>

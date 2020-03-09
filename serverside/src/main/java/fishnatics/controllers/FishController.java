@@ -194,6 +194,22 @@ public class FishController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	// % protected region % [Add any additional endpoints here] off begin
+	// % protected region % [Add any additional endpoints here] on begin
+	/**
+	 * Return all the fish entities that are alive and were purchased
+	 *
+	 * @return Fish that are alive and were purchased
+	 */
+	@ApiOperation(
+			value = "Return all the fish entities that are alive and were purchased",
+			authorizations = {@Authorization(value = "bearerToken")}
+	)
+	@PreAuthorize("hasPermission('FishEntity', 'read')")
+	@GetMapping(value = "/get-fish-alive-purchased", produces = "application/json")
+	public ResponseEntity<List<FishEntity>> getFishByAliveAndPurchased() {
+		List fish = fishService.getFishByAliveAndPurchased();
+
+		return new ResponseEntity<>(fish, HttpStatus.OK);
+	}
 	// % protected region % [Add any additional endpoints here] end
 }

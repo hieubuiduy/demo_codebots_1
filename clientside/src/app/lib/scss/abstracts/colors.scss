@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -17,7 +17,7 @@
 /* --------------------------------
 Colours
 -------------------------------- */
-/* 
+/*
 _colors.scss is the base on setting up your colour variables in your target project
 Set your target colours but do not remove variables that you do not plan to use.
 */
@@ -56,8 +56,8 @@ $white: rgb(255, 255, 255); // #ffffff
 // % protected region % [Set colours, accent colours, and greyscale colours] end
 
 /*
-From here are calculations that are made to create shades and shadow 
-colours using the colours that have been set above. 
+From here are calculations that are made to create shades and shadow
+colours using the colours that have been set above.
 
 It is not recommended to make these changes unless you specifically want
 an assigned shade to the variables.
@@ -111,5 +111,11 @@ $color-support-purple-dark: darken($color-support-purple, $color-shades);
 $color-support-purple-bg: rgba($color-support-purple, $color-alpha);
 // % protected region % [Set colour shades] end
 
-// % protected region % [Add additional colours here] off begin
+// % protected region % [Add additional colours here] on begin
+$color-primary: rgb(34, 9, 87);
+$color-secondary: rgb(44, 145, 212);
+
+$color-brand-01: rgb(0, 41, 250);
+$color-brand-02: rgb(92, 115, 242);
+$color-brand-03: rgb(130, 159, 217);
 // % protected region % [Add additional colours here] end

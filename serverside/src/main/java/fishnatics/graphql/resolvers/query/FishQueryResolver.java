@@ -185,7 +185,7 @@ public class FishQueryResolver implements GraphQLQueryResolver {
 
 
 	// % protected region % [Import any additional class methods here] on begin
-	 /**
+	/**
 	 * Return a list of {@link FishEntity} entities.
 	 *
 	 * @return a list of fish entities that are alive and have been purchased

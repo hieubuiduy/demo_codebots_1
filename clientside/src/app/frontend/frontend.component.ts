@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -73,13 +73,14 @@ export class FrontendComponent implements OnInit {
 		// % protected region % [Add any initial logic here] off begin
 		// % protected region % [Add any initial logic here] end
 
-		// % protected region % [Customise or remove the default navigation bar links for entities] off begin
+		// % protected region % [Customise or remove the default navigation bar links for entities] on begin
 		let entityLinks = [
 				new Link('Stats', [], 'icon-book', 'stats'),
-				new Link('Tank', [], 'icon-book', 'tank'),
-				new Link('Species', [], 'icon-book', 'species'),
-				new Link('Fish', [], 'icon-book', 'fish'),
-		];
+				new Link('Species', [], 'icon-categories', 'species'),
+				new Link('Tank', [], 'icon-tank', 'tank'),
+				new Link('Fish', [], 'icon-fish', 'fish'),
+				new Link('Home', [], 'icon-home', 'welcome'),
+        	];
 		// % protected region % [Customise or remove the default navigation bar links for entities] end
 		// % protected region % [Customise or remove the default navigation bar links] off begin
 		this.navBarLinks.push(
