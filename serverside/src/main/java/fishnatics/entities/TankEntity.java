@@ -62,7 +62,7 @@ public class TankEntity extends AbstractEntity {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// % protected region % [Modify attribute annotation for Name here] off begin
-	@Nullable
+	@NotNull
 	@Column(name = "name")
 	@ApiModelProperty(notes = "The Name of this entity.")
 	@ToString.Include
