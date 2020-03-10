@@ -18,29 +18,29 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {CommonComponentModule} from '../../../lib/components/common.component.module';
-import {WelcomeWrappingTileTileComponent} from './welcome_wrapping_tile.tile.component';
-import {WelcomeWrappingViewViewComponent} from '../../../views/welcomeWrappingView/welcome_wrapping_view.view.component';
-import {WelcomeTileModule} from '../welcome/welcome.tile.module'
+import {WelcomeTileComponent} from './welcome.tile.component';
 
-// % protected region % [Add any additional imports here] off begin
+// % protected region % [Add any additional imports here] on begin
+import {RouterModule} from '@angular/router';
+import { StatsTileModule } from '../stats/stats.tile.module';
 // % protected region % [Add any additional imports here] end
 
 @NgModule({
 	declarations: [
-		WelcomeWrappingTileTileComponent,
-		WelcomeWrappingViewViewComponent,
+		WelcomeTileComponent,
 		// % protected region % [Add any additional declaration here] off begin
+		RouterModule,
+		StatsTileModule,
 		// % protected region % [Add any additional declaration here] end
 	],
 	imports: [
 		CommonModule,
 		CommonComponentModule,
-		WelcomeTileModule,
 		// % protected region % [Add any additional module imports here] off begin
 		// % protected region % [Add any additional module imports here] end
 	],
 	exports: [
-		WelcomeWrappingTileTileComponent,
+		WelcomeTileComponent,
 	],
 	providers: [
 		// % protected region % [Add any additional providers here] off begin
@@ -49,5 +49,5 @@ import {WelcomeTileModule} from '../welcome/welcome.tile.module'
 	// % protected region % [Add any additional module configurations here] off begin
 	// % protected region % [Add any additional module configurations here] end
 })
-export class WelcomeWrappingTileTileModule {
+export class WelcomeTileModule {
 }

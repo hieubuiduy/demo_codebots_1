@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <springbotEntity:EntityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:springbotEntity="http://codebots.com/emf/springbot/entity" Uuid="be7aa04a-5c6b-11ea-9066-6d6f75736579" TargetProject="fishnatics">
   <Entities xsi:type="springbotEntity:Entity" Uuid="c6c0ca3f-c14c-4d48-ae8b-65728dd48382" Name="Tank" DocoDescription="A fish tank" OrderBy="f2955b46-87b2-4ba0-9cc1-448183696e2f">
-    <Attributes xsi:type="springbotEntity:AttributeString" Uuid="f2955b46-87b2-4ba0-9cc1-448183696e2f" Name="Name" DocoDescription="The name of the tank" Searchable="true"/>
+    <Attributes xsi:type="springbotEntity:AttributeString" Uuid="f2955b46-87b2-4ba0-9cc1-448183696e2f" Name="Name" DocoDescription="The name of the tank" Searchable="true">
+      <Validators xsi:type="springbotEntity:ValidatorRequired" Uuid="e2547d62-7d81-4fe4-a541-eaaa7bf4177b"/>
+    </Attributes>
     <Attributes xsi:type="springbotEntity:AttributeDecimal" Uuid="27d85ff7-17b7-433c-a300-67f295b7475a" Name="Width" DocoDescription="tank's width"/>
     <Attributes xsi:type="springbotEntity:AttributeDecimal" Uuid="30dc43d2-edb7-4acb-9b50-e29920e2d617" Name="Length" DocoDescription="Tank's Length"/>
     <Attributes xsi:type="springbotEntity:AttributeDecimal" Uuid="78d02a2d-c2cb-4c91-9bab-908cded13108" Name="Height" DocoDescription="Tank's height"/>

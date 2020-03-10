@@ -128,6 +128,7 @@ export class TankModel extends AbstractModel {
 				readOnly: false,
 				// % protected region % [Set readonly for Name here] end
 				validators: [
+					Validators.required,
 					// % protected region % [Add other validators for Name here] off begin
 					// % protected region % [Add other validators for Name here] end
 				],

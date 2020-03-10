@@ -15,6 +15,20 @@
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
  */
 
-// % protected region % [Add additional style content here] on begin
-@import '_welcome.scss';
-// % protected region % [Add additional style content here] end
+import {Component} from '@angular/core';
+
+// % protected region % [Add any additional imports here] off begin
+// % protected region % [Add any additional imports here] end
+
+@Component({
+	selector: 'cb-welcome-tile',
+	templateUrl: './welcome.tile.component.html',
+	styleUrls: ['./welcome.tile.component.scss']
+})
+export class WelcomeTileComponent {
+	// % protected region % [Add any additional class fields here] off begin
+	// % protected region % [Add any additional class fields here] end
+
+	// % protected region % [Add any additional class methods here] off begin
+	// % protected region % [Add any additional class methods here] end
+}

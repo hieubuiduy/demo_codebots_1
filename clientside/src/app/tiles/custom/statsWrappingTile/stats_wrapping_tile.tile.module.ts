@@ -20,6 +20,7 @@ import {CommonModule} from "@angular/common";
 import {CommonComponentModule} from '../../../lib/components/common.component.module';
 import {StatsWrappingTileTileComponent} from './stats_wrapping_tile.tile.component';
 import {StatsWrappingViewViewComponent} from '../../../views/statsWrappingView/stats_wrapping_view.view.component';
+import {StatsTileModule} from '../stats/stats.tile.module'
 
 // % protected region % [Add any additional imports here] off begin
 // % protected region % [Add any additional imports here] end
@@ -34,6 +35,7 @@ import {StatsWrappingViewViewComponent} from '../../../views/statsWrappingView/s
 	imports: [
 		CommonModule,
 		CommonComponentModule,
+		StatsTileModule,
 		// % protected region % [Add any additional module imports here] off begin
 		// % protected region % [Add any additional module imports here] end
 	],

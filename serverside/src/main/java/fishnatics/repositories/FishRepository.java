@@ -26,9 +26,6 @@ import java.util.Optional;
 import java.util.List;
 
 // % protected region % [Import any additional imports here] off begin
-import fishnatics.entities.QFishEntity;
-import com.google.common.collect.Lists;
-import com.querydsl.core.types.Predicate;
 // % protected region % [Import any additional imports here] end
 
 /**
