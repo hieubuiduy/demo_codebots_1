@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -39,7 +39,8 @@ export class FishModel extends AbstractModel {
 	 */
 	// TODO add the searchable in the Metamodel
 	static searchFields: string[] = [
-		// % protected region % [Add any additional searchable field names here] off begin
+		// % protected region % [Add any additional searchable field names here] on begin
+		'speciesName'
 		// % protected region % [Add any additional searchable field names here] end
 	];
 
@@ -47,7 +48,7 @@ export class FishModel extends AbstractModel {
 	 * Attributes to be shown in value to display
 	 */
 	static displayAttributes: string[] = [
-		// % protected region % [Change displayAttributes here if needed] off begin
+		// % protected region % [Change displayAttributes here if needed] on begin
 		'name',
 		// % protected region % [Change displayAttributes here if needed] end
 	];

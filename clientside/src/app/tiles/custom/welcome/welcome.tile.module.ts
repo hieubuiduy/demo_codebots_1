@@ -29,14 +29,14 @@ import { StatsTileModule } from '../stats/stats.tile.module';
 	declarations: [
 		WelcomeTileComponent,
 		// % protected region % [Add any additional declaration here] off begin
-		RouterModule,
-		StatsTileModule,
 		// % protected region % [Add any additional declaration here] end
 	],
 	imports: [
 		CommonModule,
 		CommonComponentModule,
-		// % protected region % [Add any additional module imports here] off begin
+		// % protected region % [Add any additional module imports here] on begin
+		RouterModule,
+		StatsTileModule,
 		// % protected region % [Add any additional module imports here] end
 	],
 	exports: [
