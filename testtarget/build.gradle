@@ -99,14 +99,14 @@ configurations {
 }
 
 test {
-	systemProperty "cucumber.options", System.getProperty("cucumber.options")
+	systemProperty "cucumber.options", project.properties["cucumber.options"]
 	useTestNG() {
 		useDefaultListeners = true
 		suites 'src/test/resources/suites/all-suites.xml'
 	}
 	testLogging.showStandardStreams = true
 	scanForTestClasses = false
-	systemProperty "cucumber.options", System.getProperty("cucumber.options")
+	systemProperty "cucumber.options", project.properties["cucumber.options"]
 }
 
 // % protected region % [Add any additional Gradle tasks here] off begin

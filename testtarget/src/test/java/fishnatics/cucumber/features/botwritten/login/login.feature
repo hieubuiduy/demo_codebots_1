@@ -14,19 +14,17 @@
 # This file is bot-written.
 # Any changes out side of "protected regions" will be lost next time the bot makes any changes.
 ###
-
 @bot
 @login
 Feature: Login
+
 	Scenario: Login as normal Fishnatic user
 		Given I navigate to the login page
 		When I login with username "fishnatic@example.com" with password "password"
 		Then I should see the homepage
 		# % protected region % [Add additional steps for 'Login as normal Fishnatic user'] off begin
 		# % protected region % [Add additional steps for 'Login as normal Fishnatic user'] end
-@bot
-@login
-Feature: Login
+
 	Scenario: Login as normal Admin user
 		Given I navigate to the login page
 		When I login with username "admin@example.com" with password "password"

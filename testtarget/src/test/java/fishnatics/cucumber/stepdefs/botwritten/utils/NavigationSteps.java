@@ -18,7 +18,7 @@ package fishnatics.cucumber.stepdefs.botwritten.utils;
 
 import fishnatics.cucumber.stepdefs.botwritten.AbstractStepDef;
 import fishnatics.cucumber.utils.NavigationUtils;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import lombok.extern.slf4j.Slf4j;
 
 // % protected region % [Add any additional imports here] off begin
@@ -29,5 +29,10 @@ public class NavigationSteps extends AbstractStepDef {
 	@Then("I refresh the page")
 	public void refreshPage() throws Exception {
 		NavigationUtils.refreshPage(webDriver);
+	}
+
+	@Given("I navigate to url (.*)")
+	public void navigateToUrl(String url) {
+		NavigationUtils.goToUrl(webDriver, url);
 	}
 }
