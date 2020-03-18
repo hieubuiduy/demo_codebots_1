@@ -44,6 +44,16 @@ Any changes out side of "protected regions" will be lost next time the bot makes
 		(prev)="onPrevPageRequested()"
 		(next)="onNextPageRequested()"
 		(last)="onLastPageRequested()">
+		<div customFilterQuestions>
+			<cb-custom-reference-filter
+				[id]="'species'"
+				[name]="'Species'"
+				[label]="'Species'"
+				[formControl]="speciesReferenceFilterFormControl"
+				[viewRef]="viewRef"
+				[modalComponent]="speciesReferenceFilterComponent">
+			</cb-custom-reference-filter>
+		</div>
 	</cb-collection>
 	<!-- % protected region % [Customise your collection here] end -->
 	<!--Middle resizeable bar-->
@@ -63,6 +73,7 @@ Any changes out side of "protected regions" will be lost next time the bot makes
 		[isDisabled]="isViewOnly"
 		[audits]="fishAudits$ | async">
 	</cb-crud-create-edit>
+<!--	<<cb-activity-list *ngIf="targetModel && targetModel.id != undefined" [appointmentId]="targetModel.id"></cb-activity-list>-->
 	<!-- % protected region % [Customise your crud tile here] end -->
 </section>
 <!-- % protected region % [Add any additional HTML structure after the main body here] off begin -->

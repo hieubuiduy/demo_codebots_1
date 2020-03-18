@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -54,6 +54,11 @@ import {OrderBy, PassableStateConfig, QueryOperation, QueryParams, Where, Expand
 import {FilterQuestion, FilterQuestionType} from '../../../lib/components/collection/collection-filter.component';
 import {createReactiveFormFromModel} from '../../../lib/models/model-utils';
 import {AuthenticationService} from '../../../lib/services/authentication/authentication.service';
+import {SpeciesReferenceFilterComponent} from "./referenceFilters/species/species-reference-filter/species-reference-filter.component";
+import {DatepickerConfig} from "../../../lib/components/datepicker/datepicker.component";
+import {DropdownConfig} from "../../../lib/components/dropdown/dropdown.component";
+import {GenderEnum} from "../../../enums/gender.enum";
+import {BornEnum, bornEnumArray} from "../../../enums/born.enum";
 
 // % protected region % [Add any additional imports here] off begin
 // % protected region % [Add any additional imports here] end
@@ -395,6 +400,19 @@ export class FishTileCrudComponent implements OnInit {
 	 */
 	filterQuestions: FilterQuestion[] = [
 		// % protected region % [Add any additional filter questions for the collection here] off begin
+		{
+			filterType: FilterQuestionType.dropdown,
+			config: {
+				options: bornEnumArray,
+				labelField: 'value',
+				valueField: 'key',
+				id: 'FishStatusFilter',
+				label: 'Species List',
+				// % protected region % [Add any additional config for the dropdown filter question here] off begin
+				// % protected region % [Add any additional config for the dropdown filter question here] end
+			},
+			name: 'Species',
+		},
 		// % protected region % [Add any additional filter questions for the collection here] end
 	];
 
@@ -418,14 +436,17 @@ export class FishTileCrudComponent implements OnInit {
 	 */
 	isViewOnly: boolean = false;
 
-	// % protected region % [Add any additional class fields here] off begin
+	// % protected region % [Add any additional class fields here] on begin
+	speciesReferenceFilterComponent = SpeciesReferenceFilterComponent;
+	speciesReferenceFilterFormControl = new FormControl();
 	// % protected region % [Add any additional class fields here] end
 
 	constructor(
 		private readonly store: Store<{ model: FishModelState }>,
 		private readonly routerStore: Store<{ router: RouterState }>,
 		private authenticationService: AuthenticationService,
-		// % protected region % [Add any additional constructor parameters here] off begin
+		// % protected region % [Add any additional constructor parameters here] on begin
+		public readonly viewRef: ViewContainerRef,
 		// % protected region % [Add any additional constructor parameters here] end
 	) {
 		// % protected region % [Add any additional constructor logic before the main body here] off begin
@@ -743,7 +764,14 @@ export class FishTileCrudComponent implements OnInit {
 
 		this.filterConditions = FishModel.convertFilterToCondition($event.filterFormGroup);
 
-		// % protected region % [Add any additional onCollectionFilter logic before constructing a state config here] off begin
+		// % protected region % [Add any additional onCollectionFilter logic before constructing a state config here] on begin
+		if (this.speciesReferenceFilterFormControl.value){
+			this.filterConditions.push([{
+				path: 'species_id',
+				operation: QueryOperation.EQUAL,
+				value: this.speciesReferenceFilterFormControl.value
+			}])
+		}
 		// % protected region % [Add any additional onCollectionFilter logic before constructing a state config here] end
 
 		let stateConfig: PassableStateConfig<FishModel> = {

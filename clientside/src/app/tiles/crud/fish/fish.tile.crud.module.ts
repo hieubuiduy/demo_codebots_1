@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -24,7 +24,9 @@ import {FishService} from '../../../services/fish/fish.service';
 import {FishTileCrudComponent} from './fish.tile.crud.component';
 import {RoleGuard} from '../../../lib/guards/role.guard';
 
-// % protected region % [Add any additional imports here] off begin
+// % protected region % [Add any additional imports here] on begin
+import { SpeciesReferenceFilterComponent } from './referenceFilters/species/species-reference-filter/species-reference-filter.component';
+import {ReactiveFormsModule} from "@angular/forms";
 // % protected region % [Add any additional imports here] end
 
 const rolesAllowedToRead = [
@@ -95,7 +97,7 @@ const appRoutes: Routes = [
 				},
 			}
 		],
-		
+
 	},
 	// % protected region % [Configure routing for crud tile here] end
 ];
@@ -103,7 +105,8 @@ const appRoutes: Routes = [
 @NgModule({
 	declarations: [
 		FishTileCrudComponent,
-		// % protected region % [Add any additional declaration here] off begin
+		// % protected region % [Add any additional declaration here] on begin
+		SpeciesReferenceFilterComponent,
 		// % protected region % [Add any additional declaration here] end
 	],
 	imports: [
@@ -111,7 +114,8 @@ const appRoutes: Routes = [
 		CommonComponentModule,
 		CommonPipeModule,
 		RouterModule.forChild(appRoutes),
-		// % protected region % [Add any additional module imports here] off begin
+		// % protected region % [Add any additional module imports here] on begin
+		ReactiveFormsModule,
 		// % protected region % [Add any additional module imports here] end
 	],
 	exports: [
@@ -124,7 +128,10 @@ const appRoutes: Routes = [
 		// % protected region % [Add any additional providers here] off begin
 		// % protected region % [Add any additional providers here] end
 	],
-	// % protected region % [Add any additional module configurations here] off begin
+	// % protected region % [Add any additional module configurations here] on begin
+	entryComponents: [
+		SpeciesReferenceFilterComponent,
+	]
 	// % protected region % [Add any additional module configurations here] end
 })
 export class FishTileCrudModule {

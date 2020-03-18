@@ -1,0 +1,38 @@
+// Abstract Imports
+@import '../../scss/abstracts/import-abstracts.scss';
+@import '~harmony/shared/harmony.scss';
+
+
+.custom-reference-filter__input {
+	display: flex;
+	position: relative;
+	align-items: center;
+	height: auto;
+
+	@include input-placeholder {
+		@include icon(before, search);
+	}
+
+	input {
+		border: convert-rem(1px) solid $color-brand-02;
+		padding: $space-xs;
+		width: convert-rem(300px);
+		margin: 0;
+		line-height: 1.9;
+
+		&:active,
+		&:focus {
+
+			&::-webkit-input-placeholder,
+			&:-moz-placeholder,
+			&:-ms-input-placeholder {
+				opacity: 0;
+				@include fadeOut($animation-time);
+			}
+		}
+	}
+
+	.btn {
+		padding: $space-sm;
+	}
+}

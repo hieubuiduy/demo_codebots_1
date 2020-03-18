@@ -565,6 +565,8 @@ public class FishService extends AbstractService<FishEntity, FishRepository, Fis
 			case "speciesName":
 				predicate = entity.species.name.containsIgnoreCase(condition.getValue());
 				break;
+			case "species_id":
+				predicate = entity.species.id.eq(UUID.fromString(condition.getValue()));
 			// % protected region % [Add any additional cases for the custom query parameters here] end
 		}
 

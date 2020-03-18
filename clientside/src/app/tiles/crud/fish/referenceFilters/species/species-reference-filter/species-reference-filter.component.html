@@ -1,0 +1,20 @@
+<cb-collection
+	[models]="speciesObs | async"
+	[pageIndex]="pageIndex"
+	[isLastPage]="isLastPage"
+	[headerOptions]="headerOptions"
+	[filterQuestions]="filterQuestions"
+	[itemActions]="itemActions"
+	[collectionActions]="collectionActions"
+	[loadingType]="loadingType"
+	[hideCheckbox]="true"
+	(itemActionClick)="onItemActionClicked($event)"
+	(sort)="onCollectionSort($event)"
+	(filter)="onCollectionFilter($event)"
+	(search)="onCollectionSearch($event)"
+	(first)="onFirstPageRequested()"
+	(prev)="onPrevPageRequested()"
+	(next)="onNextPageRequested()"
+	(last)="onLastPageRequested()"
+>
+</cb-collection>

@@ -1,6 +1,6 @@
 /*
  * @bot-written
- * 
+ *
  * WARNING AND NOTICE
  * Any access, download, storage, and/or use of this source code is subject to the terms and conditions of the
  * Full Software Licence as accepted by you before being granted access to this source code and other materials,
@@ -9,7 +9,7 @@
  * licence termination and further legal action, and be required to indemnify Codebots for any loss or damage,
  * including interest and costs. You are deemed to have accepted the terms of the Full Software Licence on any
  * access, download, storage, and/or use of this source code.
- * 
+ *
  * BOT WARNING
  * This file is bot-written.
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
@@ -52,7 +52,8 @@ import {TabGroupComponent} from './tab/tab-group.component';
 import {TabComponent} from './tab/tab.component';
 import {AccordionComponent, AccordionInfoDirective} from './accordion/accordion.component';
 
-// % protected region % [Add any additional imports here] off begin
+// % protected region % [Add any additional imports here] on begin
+import { CustomReferenceFilterComponent } from './custom-reference-filter/custom-reference-filter.component';
 // % protected region % [Add any additional imports here] end
 
 /**
@@ -86,7 +87,8 @@ import {AccordionComponent, AccordionInfoDirective} from './accordion/accordion.
 		TabComponent,
 		AccordionComponent,
 		AccordionInfoDirective,
-		// % protected region % [Add any additional declaration here] off begin
+		// % protected region % [Add any additional declaration here] on begin
+		CustomReferenceFilterComponent,
 		// % protected region % [Add any additional declaration here] end
 	],
 	imports: [
@@ -127,7 +129,8 @@ import {AccordionComponent, AccordionInfoDirective} from './accordion/accordion.
 		FileUploadComponent,
 		TabGroupComponent,
 		TabComponent,
-		// % protected region % [Add any additional exports here] off begin
+		// % protected region % [Add any additional exports here] on begin
+		CustomReferenceFilterComponent,
 		// % protected region % [Add any additional exports here] end
 	],
 	providers: [

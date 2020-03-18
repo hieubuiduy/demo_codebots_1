@@ -59,7 +59,9 @@ Any changes out side of "protected regions" will be lost next time the bot makes
 		</section>
 		<!--Filter section-->
 		<section aria-label="collection__filter" class="collection__filters" *ngIf="displayFilter">
-			<cb-collection-filter (filterEmitter)="onFilter($event)" [filterQuestions]="filterQuestions"></cb-collection-filter>
+			<cb-collection-filter (filterEmitter)="onFilter($event)" [filterQuestions]="filterQuestions">
+				<ng-content select="[customFilterQuestions]"></ng-content>
+			</cb-collection-filter>
 		</section>
 		<!--Select option-->
 		<section aria-label="select options" class="collection__select-options" [class.hide]="selectedModels.size == 0">

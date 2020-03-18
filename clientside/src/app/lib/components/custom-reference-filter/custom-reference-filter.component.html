@@ -1,0 +1,23 @@
+<ng-container *ngIf="isDisplaying">
+	<label *ngIf="isLabelVisible" for="{{ fieldId }}" [attr.aria-describedby]="tooltipId">{{ label }}</label>
+	<div *ngIf="tooltip && isLabelVisible" class="tooltip icon-tooltip" id="{{ tooltipId }}">
+		<span class="tooltip__content">{{ tooltip }}</span>
+	</div>
+	<div class="custom-reference-filter__input">
+		<input
+			id="{{ fieldId }}"
+			[value]="valueToDisplay ? valueToDisplay : null"
+			[readOnly]="true"
+			[attr.aria-label]="isLabelVisible ? null : label"
+			[name]="name">
+		<button cb-button [iconName]="'search'" [labelVisible]="false" (click)="showCustomFilter()">Search</button>
+	</div>
+
+	<ng-container *ngIf="validationErrors && dirty">
+		<p cb-input-errorMessage
+		   *ngFor="let error of validationErrors | keyvalue;"
+		   [errorType]="error.key"
+		   [errorValue]="error.value"
+		   [name]="name"></p>
+	</ng-container>
+</ng-container>
